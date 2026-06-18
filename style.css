@@ -1,0 +1,318 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+header {
+  background-color: #4f46e5;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+.summary {
+  display: flex;
+  gap: 16px;
+  padding: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px 30px;
+  text-align: center;
+  flex: 1;
+  min-width: 160px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-top: 4px solid #ccc;
+}
+
+.card-balance  { border-top-color: #4f46e5; }
+.card-income   { border-top-color: #22c55e; }
+.card-expense  { border-top-color: #ef4444; }
+
+.card-label {
+  font-size: 0.8rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.card-amount {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.main {
+  display: flex;
+  gap: 20px;
+  padding: 0 24px 40px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.form-box {
+  background: white;
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  flex: 1;
+  min-width: 280px;
+  max-width: 380px;
+}
+
+.form-box h2 {
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.form-box label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #555;
+  margin-top: 14px;
+  margin-bottom: 4px;
+}
+
+.form-box input,
+.form-box select {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1.5px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: #333;
+  background: #fafafa;
+}
+
+.form-box input:focus,
+.form-box select:focus {
+  outline: none;
+  border-color: #4f46e5;
+  background: white;
+}
+
+.form-box button {
+  margin-top: 18px;
+  width: 100%;
+  padding: 11px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#submitBtn {
+  background-color: #4f46e5;
+  color: white;
+}
+
+#submitBtn:hover {
+  background-color: #4338ca;
+}
+
+#cancelBtn {
+  background-color: #e5e7eb;
+  color: #444;
+  margin-top: 8px;
+}
+
+#cancelBtn:hover {
+  background-color: #d1d5db;
+}
+
+.error-msg {
+  color: #ef4444;
+  font-size: 0.85rem;
+  background: #fee2e2;
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: none;
+}
+
+.list-box {
+  background: white;
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  flex: 2;
+  min-width: 280px;
+}
+
+.list-box h2 {
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.empty-msg {
+  color: #aaa;
+  text-align: center;
+  padding: 30px 0;
+}
+
+#transactionList {
+  list-style: none;
+}
+
+.tx-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: #fafafa;
+}
+
+.tx-item:hover {
+  background: #f3f4f6;
+}
+
+.tx-dot {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dot-income  { background: #dcfce7; }
+.dot-expense { background: #fee2e2; }
+
+.tx-info {
+  flex: 1;
+}
+
+.tx-desc {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #222;
+}
+
+.tx-date {
+  font-size: 0.75rem;
+  color: #999;
+  margin-top: 2px;
+}
+
+.tx-amount {
+  font-weight: bold;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.amount-income  { color: #22c55e; }
+.amount-expense { color: #ef4444; }
+
+.tx-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.btn-edit,
+.btn-delete {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.78rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-edit {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.btn-edit:hover {
+  background: #fde68a;
+}
+
+.btn-delete {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+.btn-delete:hover {
+  background: #fca5a5;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.popup-box {
+  background: white;
+  border-radius: 12px;
+  padding: 32px 28px;
+  text-align: center;
+  max-width: 340px;
+  width: 90%;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+.popup-box p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.popup-box button {
+  padding: 10px 22px;
+  margin: 0 6px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-danger {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #dc2626;
+}
+
+.popup-box button:not(.btn-danger) {
+  background: #e5e7eb;
+  color: #444;
+}
+
+@media (max-width: 600px) {
+  .summary     { padding: 16px; }
+  .main        { padding: 0 16px 32px; }
+  .form-box    { max-width: 100%; }
+  .card-amount { font-size: 1.3rem; }
+}
